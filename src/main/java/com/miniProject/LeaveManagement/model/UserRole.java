@@ -1,5 +1,7 @@
 package com.miniProject.LeaveManagement.model;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +15,13 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties({"hibernatelazyinitializer", "handler"})
 public class UserRole {
-	
 	@Id
-	public String id;
+	private String id= UUID.randomUUID().toString();
+	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ai;
-	private String role;
-	private String userId;
-	private String password;
+	public String role;
+	public String userId;
+	public String password;
 
 }

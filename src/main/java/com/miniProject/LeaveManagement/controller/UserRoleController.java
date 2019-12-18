@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.miniProject.LeaveManagement.model.Response;
 import com.miniProject.LeaveManagement.model.UserRole;
 import com.miniProject.LeaveManagement.service.UserRoleService;
 
@@ -30,14 +31,14 @@ public class UserRoleController {
 	}
 	
 	@PostMapping("/addUserRole")
-	public String addUserRole(@RequestBody UserRole userRole){
+	public ResponseEntity<Response> addUserRole(@RequestBody UserRole userRole){
 		userRoleSerivce.addRole(userRole); 
-		return "done";
+		return new ResponseEntity<Response>(new Response("aded user"), HttpStatus.OK);
 	}
 	
 	@PostMapping("/deleteUser/{id}")
-	public String deleteUserRole(@PathVariable String id){
+	public ResponseEntity<Response> deleteUserRole(@PathVariable String id){
 		userRoleSerivce.deleteRole(id); 
-		return "done";
+		return new ResponseEntity<Response>(new Response("aded user"), HttpStatus.OK);
 	}
 }

@@ -36,5 +36,18 @@ public class UserServiceImpl implements UserService {
 		userRepository.deleteById(id);;	
 	}
 
+	@Override
+	public boolean findUnique(String email) {
+		// TODO Auto-generated method stu
+		User user = userRepository.findByEmail(email);
+		return user != null;
+	}
+
+	@Override
+	public User findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

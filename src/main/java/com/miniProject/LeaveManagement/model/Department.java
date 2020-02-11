@@ -21,6 +21,7 @@ public class Department {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ai;
+	
 	public String departmentName;
 	
 }

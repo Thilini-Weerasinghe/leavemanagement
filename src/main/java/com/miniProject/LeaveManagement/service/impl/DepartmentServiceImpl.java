@@ -38,6 +38,19 @@ public class DepartmentServiceImpl implements DepartmentService  {
 		
 	}
 
+	@Override
+	public boolean findUnique(String departmentName) {
+		// TODO Auto-generated method stub
+		Department department = departmentRepository.findByName(departmentName);
+		return department != null;
+	}
+
+	@Override
+	public Department findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }

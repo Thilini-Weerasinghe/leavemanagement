@@ -49,11 +49,15 @@ public class UserController {
 			return new ResponseEntity<Map<String, Object>>(map , HttpStatus.OK);
 //		}
 		}else {
-			
+			if(userService.findUnique(user.getEmail())) {
+				System.out.println("33333333333333333333333333333333"+userService.findUnique(user.getEmail()));
+			throw new NotAcceptableStatusException("user is exsit by this email");
+		}else {
 			map.put("action", new String("saved"));
 			map.put("user", user);
 			userService.addUser(user); 
 			return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+		}
 		}
 		
 		

@@ -11,4 +11,9 @@ public interface DepartmentService{
 	Department addDepartment(Department department);
 
 	void deleteDepartment(String id); 
+	
+	boolean findUnique(String departmentName);
+
+	Department findById(String id);
+
 }

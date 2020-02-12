@@ -38,7 +38,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean findUnique(String email) {
-		// TODO Auto-generated method stu
+		// TODO Auto-generated method stub
+		//User user = userRepository.findByEmail(email);
 		User user = userRepository.findByEmail(email);
 		return user != null;
 	}
